@@ -17,11 +17,8 @@
 		</div>
 		<!-- List of locations on map -->
 		<div class="list text-center" id="list">
-        	<span class="toggler" data-bind="text: toggleSymbol, click: listToggle">hide</span>
-        	<div data-bind="visible: toggleSymbol() === 'hide'">
             	<h1>Venues</h1>
-            	<hr>
-            	<ul class="results" id="results" data-bind="visible: toggleSymbol() === 'hide', foreach: filteredList">
+            	<ul class="results" id="results" data-bind="foreach: filteredList">
                 	<li class="place" id="place" data-bind="text: title, click: bounce"></li>
             	</ul>
         	</div>

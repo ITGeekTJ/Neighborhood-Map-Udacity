@@ -84,16 +84,6 @@ Location = function(data) {
     	title: data.title
     });
 
-    // Only makes the one selected marker visible.
-    this.showMarker = ko.computed(function() {
-        if(this.visible() === true) {
-            this.marker.setMap(map);
-        } else {
-            this.marker.setMap(null);
-        }
-        return true;
-    }, this);
-
     // Add event listener for when a marker is clicked to display the infowindow
     this.marker.addListener('click', function() {
     	self.contentString = '<div class="info-window-content"><div class="title"><strong>' + data.title + "</strong></div>" +
