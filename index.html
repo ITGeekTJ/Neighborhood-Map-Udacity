@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Neighborhood Map - Indianapolis - Udacity</title>
+    	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+    	<meta charset="utf-8">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<!-- Google Map -->
+		<div class="map" id="map"></div>
+		<!-- Search Box -->
+		<div class="search" id="search">
+			<input class="search-box" id="search-box" placeholder="Search here..." data-bind="textInput: searchInput, valueUpdate: 'afterkeydown'" />
+		</div>
+		<!-- List of locations on map -->
+		<div class="list text-center" id="list">
+        	<span class="toggler" data-bind="text: toggleSymbol, click: listToggle">hide</span>
+        	<div data-bind="visible: toggleSymbol() === 'hide'">
+            	<h1>Venues</h1>
+            	<hr>
+            	<ul class="results" id="results" data-bind="visible: toggleSymbol() === 'hide', foreach: filteredList">
+                	<li class="place" id="place" data-bind="text: title, click: bounce"></li>
+            	</ul>
+        	</div>
+    	</div>
+
+		<!-- Main JS -->
+		<script src="js/app.js"></script>
+		<!-- Knockout -->
+		<script src='js/knockout-3.4.2.js'></script>
+		<!-- JQuery -->
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+		<!-- Google Maps API -->
+		<script async defer
+      		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRG9pOL9UqrAk2LY_QLwukNp27qUgRedI&callback=initMap">
+    	</script>
+	</body>
+</html>
