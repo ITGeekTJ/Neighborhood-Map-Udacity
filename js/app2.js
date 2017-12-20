@@ -134,9 +134,7 @@ var initMap = function() {
         if (infowindow.marker != marker) {
             infowindow.marker = marker;
 
-            infowindow.setContent('<div class="title"><b>' + data.title + "</b></div>" +
-                '<div class="content">' + self.street + "</div>" +
-                '<div class="content">' + self.city + "</div>");
+            infowindow.setContent('<div>' + marker.title + '</div>');
 
             infowindow.open(map, marker);
 
@@ -154,14 +152,23 @@ var initMap = function() {
 
         var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + venueFoursquareID + '?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=' + version;
 
-        $.getJSON(foursquareURL).done(function(data) {
-            var results = data.response.venues[0];
-            self.street = results.location.formattedAddress[0] || 'No Address Provided';
-            self.city = results.location.formattedAddress[1] || 'No Address Provided';
-        }).fail(function () {
-            $('.list').html('There was an error with your request. Please try again.');
-        });
+        $.ajax({
+            url: foursquareURL,
+            success: function(data) {
 
+                marker.rating = data.response.venue.rating;
+                marker.hours = data.response.venue.hours;
+                marker.description = data.response.venue.description;
+                populateInfoWindow(marker, largeInfoWindow);
+            },
+
+            error: function(error) {
+                largeInfoWindow.setContent('<div>' + marker.title +
+                    '<p>' + marker.address + '</div>' +
+                    '<p>' + 'Rating: ' + 'FourSquare cannot be reached');
+                largeInfoWindow.open(map, marker);
+            }
+        });
     }
 
     // Makes marker bounce when maker is clicked
