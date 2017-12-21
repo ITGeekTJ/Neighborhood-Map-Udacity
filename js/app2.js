@@ -4,7 +4,7 @@ var locations = [
         title : 'Indianapolis Motor Speedway',
         address: '4790 W. 16th St. Indianapolis, IN 46222',
         locale: {lat : 39.78977746416131, lng : -86.23399395765476},
-        venueID: '4bf58dd8d48988d1f4931735'
+        venueID: '4ad4bff8f964a52011ea20e3'
     },
     {
         title : 'Lucas Oil Stadium',
@@ -21,8 +21,8 @@ var locations = [
     {
         title : 'Indianapolis Zoo',
         address: '1200 W. Washington St. Indianapolis, IN 46222',
-        locale: {lat : 39.76762824223296, lng : -86.17995500564575},
-        venueID: '58daa1558bbb0b01f18ec1fd'
+        locale: {lat : 39.767442, lng : -86.18073},
+        venueID: '4b2eb5f8f964a52077e524e3'
     },
     {
         title : 'White River State Park',
@@ -39,8 +39,8 @@ var locations = [
     {
         title : 'Indiana State Fairgrounds',
         address: '1202 E. 38th St. Indianapolis, IN 46205',
-        locale: {lat : 39.82758608941335, lng : -86.13514095010628},
-        venueID: '4ad4bff9f964a5201cea20e3'
+        locale: {lat : 39.825566, lng: -86.137044},
+        venueID: '4ae30cdef964a5201e9021e3'
 	}
 ]
 
@@ -167,7 +167,7 @@ var initMap = function() {
             url: foursquareURL,
             success: function(data) {
 
-                marker.description = data.response.venue.description;
+                marker.description = data.response.venue.description || 'No description provided';
                 populateInfoWindow(marker, largeInfoWindow);
             },
 
