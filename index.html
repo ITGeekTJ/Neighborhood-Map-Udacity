@@ -18,18 +18,19 @@
 		<!-- List of locations on map -->
 		<div class="list text-center" id="list">
             	<h1>Venues</h1>
+            	<hr>
+            	<div id="disclaimer">*Brought to you by Google Maps and Foursquare*</div>
             	<ul class="results" id="results" data-bind="foreach: filteredList">
                 	<li class="place" id="place" data-bind="text: title, click: $parent.showMarker"></li>
             	</ul>
-        	</div>
     	</div>
-
-		<!-- Main JS -->
-		<script src="js/app2.js"></script>
-		<!-- Knockout -->
-		<script src='js/knockout-3.4.2.js'></script>
+		
 		<!-- JQuery -->
 		<script src="js/jquery-3.2.1.js"></script>
+		<!-- Knockout -->
+		<script src='js/knockout-3.4.2.js'></script>
+		<!-- Main JS -->
+		<script src="js/app2.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 

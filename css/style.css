@@ -9,6 +9,15 @@ html, body {
 	height: 100%;
 }
 
+#list h1 {
+    font-size: 26px;
+}
+
+#disclaimer {
+    line-height: 10px;
+    font-size: 0.7em;
+}
+
 .list{
     position: absolute;
     top: 15%;
@@ -23,8 +32,12 @@ html, body {
 .list ul{
     list-style-type: none;
     display: inline;
-    line-height: 1em;
+    line-height: 2em;
     cursor: pointer;
+}
+
+.list ul li:hover {
+    color: #a91c1c;
 }
 
 .search {
@@ -39,6 +52,6 @@ html, body {
 }
 
 .search input {
-    width: 80%;
+    width: 100%;
     padding: 10px;
 }
