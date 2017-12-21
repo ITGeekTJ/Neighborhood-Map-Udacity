@@ -4,7 +4,7 @@ var locations = [
         title : 'Indianapolis Motor Speedway',
         address: '4790 W. 16th St. Indianapolis, IN 46222',
         locale: {lat : 39.78977746416131, lng : -86.23399395765476},
-        venueID: '4ad4bff8f964a52011ea20e3'
+        venueID: '4bf58dd8d48988d1f4931735'
     },
     {
         title : 'Lucas Oil Stadium',
@@ -174,7 +174,7 @@ var initMap = function() {
             error: function(error) {
                 largeInfoWindow.setContent('<div>' + marker.title + '</div>' +
                 '<div>' + marker.address + '</div>' +
-                '<div>' + 'Description: ' + 'FourSquare cannot be reached' + '</div>');
+                '<div>' + 'Description: ' + 'There is no FourSquare data to be returned.' + '</div>');
                 largeInfoWindow.open(map, marker);
             }
         });
